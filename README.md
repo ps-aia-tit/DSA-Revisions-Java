@@ -1,1 +1,7 @@
-About DSA examples:
+| Sorting Algorithm | Definition | Sample Java Code |
+|-------------------|------------|------------------|
+| **Bubble Sort** | Repeatedly swaps adjacent elements if they are in the wrong order. Simple but inefficient for large datasets. | ```java\nvoid bubbleSort(int[] arr) {\n  int n = arr.length;\n  for (int i = 0; i < n - 1; i++) {\n    for (int j = 0; j < n - i - 1; j++) {\n      if (arr[j] > arr[j + 1]) {\n        int temp = arr[j];\n        arr[j] = arr[j + 1];\n        arr[j + 1] = temp;\n      }\n    }\n  }\n} ``` |
+| **Selection Sort** | Selects the minimum element from the unsorted part and places it at the beginning. | ```java\nvoid selectionSort(int[] arr) {\n  int n = arr.length;\n  for (int i = 0; i < n - 1; i++) {\n    int minIdx = i;\n    for (int j = i + 1; j < n; j++) {\n      if (arr[j] < arr[minIdx]) {\n        minIdx = j;\n      }\n    }\n    int temp = arr[minIdx];\n    arr[minIdx] = arr[i];\n    arr[i] = temp;\n  }\n} ``` |
+| **Insertion Sort** | Builds the sorted array one item at a time by inserting elements into their correct position. | ```java\nvoid insertionSort(int[] arr) {\n  for (int i = 1; i < arr.length; i++) {\n    int key = arr[i];\n    int j = i - 1;\n    while (j >= 0 && arr[j] > key) {\n      arr[j + 1] = arr[j];\n      j--;\n    }\n    arr[j + 1] = key;\n  }\n} ``` |
+| **Merge Sort** | A divide-and-conquer algorithm that splits the array, sorts each half, and merges them. | ```java\nvoid mergeSort(int[] arr, int l, int r) {\n  if
+

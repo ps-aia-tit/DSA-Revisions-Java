@@ -1,8 +1,119 @@
 | Sorting Algorithm | Definition | Sample Java Code |
 |-------------------|------------|------------------|
-| **Bubble Sort** | Repeatedly swaps adjacent elements if they are in the wrong order. Simple but inefficient for large datasets. | ```java\nvoid bubbleSort(int[] arr) {\n  int n = arr.length;\n  for (int i = 0; i < n - 1; i++) {\n    for (int j = 0; j < n - i - 1; j++) {\n      if (arr[j] > arr[j + 1]) {\n        int temp = arr[j];\n        arr[j] = arr[j + 1];\n        arr[j + 1] = temp;\n      }\n    }\n  }\n} ``` |
-| **Selection Sort** | Selects the minimum element from the unsorted part and places it at the beginning. | ```java\nvoid selectionSort(int[] arr) {\n  int n = arr.length;\n  for (int i = 0; i < n - 1; i++) {\n    int minIdx = i;\n    for (int j = i + 1; j < n; j++) {\n      if (arr[j] < arr[minIdx]) {\n        minIdx = j;\n      }\n    }\n    int temp = arr[minIdx];\n    arr[minIdx] = arr[i];\n    arr[i] = temp;\n  }\n} ``` |
-| **Insertion Sort** | Builds the sorted array one item at a time by inserting elements into their correct position. | ```java\nvoid insertionSort(int[] arr) {\n  for (int i = 1; i < arr.length; i++) {\n    int key = arr[i];\n    int j = i - 1;\n    while (j >= 0 && arr[j] > key) {\n      arr[j + 1] = arr[j];\n      j--;\n    }\n    arr[j + 1] = key;\n  }\n} ``` |
-| **Merge Sort** | A divide-and-conquer algorithm that splits the array, sorts each half, and merges them. | ```java\nvoid mergeSort(int[] arr, int l, int r) {\n  if (l < r) {\n    int m = (l + r) / 2;\n    mergeSort(arr, l, m);\n    mergeSort(arr, m + 1, r);\n    merge(arr, l, m, r);\n  }\n}\nvoid merge(int[] arr, int l, int m, int r) {\n  int n1 = m - l + 1;\n  int n2 = r - m;\n  int[] L = new int[n1];\n  int[] R = new int[n2];\n  for (int i = 0; i < n1; i++) L[i] = arr[l + i];\n  for (int j = 0; j < n2; j++) R[j] = arr[m + 1 + j];\n  int i = 0, j = 0, k = l;\n  while (i < n1 && j < n2) {\n    arr[k++] = (L[i] <= R[j]) ? L[i++] : R[j++];\n  }\n  while (i < n1) arr[k++] = L[i++];\n  while (j < n2) arr[k++] = R[j++];\n} ``` |
-| **Quick Sort** | Picks a pivot and partitions the array around it, recursively sorting the partitions. | ```java\nvoid quickSort(int[] arr, int low, int high) {\n  if (low < high) {\n    int pi = partition(arr, low, high);\n    quickSort(arr, low, pi - 1);\n    quickSort(arr, pi + 1, high);\n  }\n}\nint partition(int[] arr, int low, int high) {\n  int pivot = arr[high];\n  int i = low - 1;\n  for (int j = low; j < high; j++) {\n    if (arr[j] < pivot) {\n      i++;\n      int temp = arr[i];\n      arr[i] = arr[j];\n      arr[j] = temp;\n    }\n  }\n  int temp = arr[i + 1];\n  arr[i + 1] = arr[high];\n  arr[high] = temp;\n  return i + 1;\n} ``` |
-| **Heap Sort** | Builds a heap and repeatedly extracts the maximum element to sort the array. | ```java\nvoid heapSort(int[] arr) {\n  int n = arr.length;\n  for (int i = n / 2 - 1; i >= 0; i--) heapify(arr, n, i);\n  for (int i = n - 1; i > 0; i--) {\n    int temp = arr[0];\n    arr[0] = arr[i];\n    arr[i] = temp;\n    heapify(arr, i, 0);\n  }\n}\nvoid heapify(int[] arr, int n, int i) {\n  int largest = i;\n  int l = 2 * i + 1;\n  int r = 2 * i + 2;\n  if (l < n && arr[l] > arr[largest]) largest = l;\n  if (r < n && arr[r] > arr[largest]) largest = r;\n  if (largest != i) {\n    int temp = arr[i];\n    arr[i] = arr[largest];\n    arr[largest] = temp;\n    heapify(arr, n, largest);\n  }\n} ``` |
+| **Bubble Sort** | Repeatedly swaps adjacent elements if they are in the wrong order. Simple but inefficient for large datasets. | ```java
+void bubbleSort(int[] arr) {
+  int n = arr.length;
+  for (int i = 0; i < n - 1; i++) {
+    for (int j = 0; j < n - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        int temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+}
+``` |
+| **Selection Sort** | Selects the minimum element from the unsorted part and places it at the beginning. | ```java
+void selectionSort(int[] arr) {
+  int n = arr.length;
+  for (int i = 0; i < n - 1; i++) {
+    int minIdx = i;
+    for (int j = i + 1; j < n; j++) {
+      if (arr[j] < arr[minIdx]) {
+        minIdx = j;
+      }
+    }
+    int temp = arr[minIdx];
+    arr[minIdx] = arr[i];
+    arr[i] = temp;
+  }
+}
+``` |
+| **Insertion Sort** | Builds the sorted array one item at a time by inserting elements into their correct position. | ```java
+void insertionSort(int[] arr) {
+  for (int i = 1; i < arr.length; i++) {
+    int key = arr[i];
+    int j = i - 1;
+    while (j >= 0 && arr[j] > key) {
+      arr[j + 1] = arr[j];
+      j--;
+    }
+    arr[j + 1] = key;
+  }
+}
+``` |
+| **Merge Sort** | A divide-and-conquer algorithm that splits the array, sorts each half, and merges them. | ```java
+void mergeSort(int[] arr, int l, int r) {
+  if (l < r) {
+    int m = (l + r) / 2;
+    mergeSort(arr, l, m);
+    mergeSort(arr, m + 1, r);
+    merge(arr, l, m, r);
+  }
+}
+void merge(int[] arr, int l, int m, int r) {
+  int n1 = m - l + 1;
+  int n2 = r - m;
+  int[] L = new int[n1];
+  int[] R = new int[n2];
+  for (int i = 0; i < n1; i++) L[i] = arr[l + i];
+  for (int j = 0; j < n2; j++) R[j] = arr[m + 1 + j];
+  int i = 0, j = 0, k = l;
+  while (i < n1 && j < n2) {
+    arr[k++] = (L[i] <= R[j]) ? L[i++] : R[j++];
+  }
+  while (i < n1) arr[k++] = L[i++];
+  while (j < n2) arr[k++] = R[j++];
+}
+``` |
+| **Quick Sort** | Picks a pivot and partitions the array around it, recursively sorting the partitions. | ```java
+void quickSort(int[] arr, int low, int high) {
+  if (low < high) {
+    int pi = partition(arr, low, high);
+    quickSort(arr, low, pi - 1);
+    quickSort(arr, pi + 1, high);
+  }
+}
+int partition(int[] arr, int low, int high) {
+  int pivot = arr[high];
+  int i = low - 1;
+  for (int j = low; j < high; j++) {
+    if (arr[j] < pivot) {
+      i++;
+      int temp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = temp;
+    }
+  }
+  int temp = arr[i + 1];
+  arr[i + 1] = arr[high];
+  arr[high] = temp;
+  return i + 1;
+}
+``` |
+| **Heap Sort** | Builds a heap and repeatedly extracts the maximum element to sort the array. | ```java
+void heapSort(int[] arr) {
+  int n = arr.length;
+  for (int i = n / 2 - 1; i >= 0; i--) heapify(arr, n, i);
+  for (int i = n - 1; i > 0; i--) {
+    int temp = arr[0];
+    arr[0] = arr[i];
+    arr[i] = temp;
+    heapify(arr, i, 0);
+  }
+}
+void heapify(int[] arr, int n, int i) {
+  int largest = i;
+  int l = 2 * i + 1;
+  int r = 2 * i + 2;
+  if (l < n && arr[l] > arr[largest]) largest = l;
+  if (r < n && arr[r] > arr[largest]) largest = r;
+  if (largest != i) {
+    int temp = arr[i];
+    arr[i] = arr[largest];
+    arr[largest] = temp;
+    heapify(arr, n, largest);
+  }
+}
+``` |

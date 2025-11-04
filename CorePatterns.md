@@ -89,3 +89,133 @@
 
 
 ---
+
+```java
+// 1. Sliding Window: Longest Substring Without Repeating Characters
+public int lengthOfLongestSubstring(String s) {
+    Set<Character> seen = new HashSet<>();
+    int left = 0, maxLen = 0;
+
+    for (int right = 0; right < s.length(); right++) {
+        while (seen.contains(s.charAt(right))) {
+            seen.remove(s.charAt(left++));
+        }
+        seen.add(s.charAt(right));
+        maxLen = Math.max(maxLen, right - left + 1);
+    }
+    return maxLen;
+}
+```
+```java
+// 2. Two Pointers: Remove Duplicates from Sorted Array
+public int removeDuplicates(int[] nums) {
+    int i = 0;
+    for (int j = 1; j < nums.length; j++) {
+        if (nums[j] != nums[i]) {
+            nums[++i] = nums[j];
+        }
+    }
+    return i + 1;
+}
+
+
+
+```
+```java
+// 3. Fast & Slow Pointers: Linked List Cycle Detection
+public boolean hasCycle(ListNode head) {
+    ListNode slow = head, fast = head;
+    while (fast != null && fast.next != null) {
+        slow = slow.next;
+        fast = fast.next.next;
+        if (slow == fast) return true;
+    }
+    return false;
+}
+
+
+
+```
+```java
+// 4. Merge Intervals: Merge Overlapping Intervals
+public int[][] merge(int[][] intervals) {
+    Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
+    List<int[]> merged = new ArrayList<>();
+
+    for (int[] interval : intervals) {
+        if (merged.isEmpty() || merged.get(merged.size() - 1)[1] < interval[0]) {
+            merged.add(interval);
+        } else {
+            merged.get(merged.size() - 1)[1] = Math.max(merged.get(merged.size() - 1)[1], interval[1]);
+        }
+    }
+    return merged.toArray(new int[merged.size()][]);
+}
+
+
+
+```
+
+```java
+// 5. Binary Search: Search in Sorted Array
+public int binarySearch(int[] nums, int target) {
+    int left = 0, right = nums.length - 1;
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        if (nums[mid] == target) return mid;
+        else if (nums[mid] < target) left = mid + 1;
+        else right = mid - 1;
+    }
+    return -1;
+}
+
+
+```
+```java
+// 6. DFS: Path Sum in Binary Tree
+public boolean hasPathSum(TreeNode root, int targetSum) {
+    if (root == null) return false;
+    if (root.left == null && root.right == null) return root.val == targetSum;
+    return hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right, targetSum - root.val);
+}
+
+
+```
+```java
+// 7. BFS: Minimum Depth of Binary Tree
+public int minDepth(TreeNode root) {
+    if (root == null) return 0;
+    Queue<TreeNode> queue = new LinkedList<>();
+    queue.offer(root);
+    int depth = 1;
+
+    while (!queue.isEmpty()) {
+        int size = queue.size();
+        for (int i = 0; i < size; i++) {
+            TreeNode node = queue.poll();
+            if (node.left == null && node.right == null) return depth;
+            if (node.left != null) queue.offer(node.left);
+            if (node.right != null) queue.offer(node.right);
+        }
+        depth++;
+    }
+    return depth;
+}
+
+```
+```java
+// 8. Dynamic Programming: Climbing Stairs
+public int climbStairs(int n) {
+    if (n <= 2) return n;
+    int[] dp = new int[n + 1];
+    dp[1] = 1; dp[2] = 2;
+
+    for (int i = 3; i <= n; i++) {
+        dp[i] = dp[i - 1] + dp[i - 2];
+    }
+    return dp[n];
+}
+
+```
+
+

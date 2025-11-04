@@ -1,5 +1,4 @@
----
-
+# 8 Core DSA Pattern Examples
 🧠 1. Sliding Window
 
 Problem: Longest Substring Without Repeating Characters
@@ -29,7 +28,6 @@ public class SlidingWindowExample {
     }
 }
 ```
----
 
 🔁 2. Two Pointers
 

@@ -1,5 +1,5 @@
 # 8 Core DSA Pattern Examples
-🧠 1. Sliding Window
+## 🧠 1. Sliding Window
 
 Problem: Longest Substring Without Repeating Characters
 
@@ -29,7 +29,8 @@ public class SlidingWindowExample {
 }
 ```
 
-🔁 2. Two Pointers
+
+##  🔁 2. Two Pointers
 
 Problem: Remove Duplicates from Sorted Array
 
@@ -57,7 +58,7 @@ public class TwoPointersExample {
 
 ```
 
-🔄 3. Fast & Slow Pointers
+## 🔄 3. Fast & Slow Pointers
 
 Problem: Detect Cycle in Linked List
 
@@ -95,7 +96,7 @@ public class CycleDetectionExample {
 
 ```
 
-📚 4. Merge Intervals
+## 📚 4. Merge Intervals
 
 Problem: Merge Overlapping Intervals
 
@@ -128,7 +129,7 @@ public class MergeIntervalsExample {
 
 
 ```
-📈 5. Binary Search
+## 📈 5. Binary Search
 
 Problem: Search Target in Sorted Array
 
@@ -155,7 +156,7 @@ public class BinarySearchExample {
 }
 
 ```
-🌲 6. Depth-First Search (DFS)
+## 🌲 6. Depth-First Search (DFS)
 
 Problem: Path Sum in Binary Tree
 
@@ -190,7 +191,7 @@ public class DFSExample {
 
 
 ```
-🌊 7. Breadth-First Search (BFS)
+## 🌊 7. Breadth-First Search (BFS)
 
 Problem: Minimum Depth of Binary Tree
 
@@ -234,7 +235,7 @@ public class BFSExample {
 
 
 ```
-🧩 8. Dynamic Programming (DP)
+## 🧩 8. Dynamic Programming (DP)
 
 Problem: Climbing Stairs
 

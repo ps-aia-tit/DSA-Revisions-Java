@@ -1,55 +1,22 @@
 ## Data Structures Definitions
 ---
 
-|## Data Structures Definitions
+## Data Structures Definitions
 
-Data Structure
+| Data Structure           | Definition                                                                                      |
+|--------------------------|--------------------------------------------------------------------------------------------------|
+| Array                    | A collection of elements identified by index, stored in contiguous memory locations.            |
+| Linked List              | A linear collection of nodes where each node points to the next, allowing efficient insertions and deletions. |
+| Stack                    | A collection that follows Last In First Out (LIFO) principle, supporting push and pop operations. |
+| Queue                    | A collection that follows First In First Out (FIFO) principle, supporting enqueue and dequeue operations. |
+| Hash Table               | A data structure that maps keys to values using a hash function for efficient lookups.          |
+| Tree                     | A hierarchical structure with nodes connected by edges, with one root node and child nodes.     |
+| Binary Tree              | A tree where each node has at most two children, referred to as left and right child.           |
+| Binary Search Tree (BST) | A binary tree where left child nodes contain smaller values and right child nodes contain larger values. |
+| Heap                     | A specialized tree-based structure that satisfies the heap property (max-heap or min-heap).     |
+| Graph                    | A collection of nodes (vertices) connected by edges, which can be directed or undirected.       |
+| Trie                     | A tree-like data structure used to store dynamic sets of strings, often for prefix searching.   |
 
-Definition
-
-Array
-
-A collection of elements identified by index, stored in contiguous memory locations.
-
-Linked List
-
-A linear collection of nodes where each node points to the next, allowing efficient insertions and deletions.
-
-Stack
-
-A collection that follows Last In First Out (LIFO) principle, supporting push and pop operations.
-
-Queue
-
-A collection that follows First In First Out (FIFO) principle, supporting enqueue and dequeue operations.
-
-Hash Table
-
-A data structure that maps keys to values using a hash function for efficient lookups.
-
-Tree
-
-A hierarchical structure with nodes connected by edges, with one root node and child nodes.
-
-Binary Tree
-
-A tree where each node has at most two children, referred to as left and right child.
-
-Binary Search Tree (BST)
-
-A binary tree where left child nodes contain smaller values and right child nodes contain larger values.
-
-Heap
-
-A specialized tree-based structure that satisfies the heap property (max-heap or min-heap).
-
-Graph
-
-A collection of nodes (vertices) connected by edges, which can be directed or undirected.
-
-Trie
-
-A tree-like data structure used to store dynamic sets of strings, often for prefix searching.
 
 ---
 

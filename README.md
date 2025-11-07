@@ -23,6 +23,10 @@
 
 ---
 
+## Sorting
+
+---
+
 | Sorting Algorithm | Definition | Sample Java Code |
 |-------------------|------------|------------------|
 | **Bubble Sort** | Repeatedly swaps adjacent elements if they are in the wrong order. Simple but inefficient for large datasets. | ```java\nvoid bubbleSort(int[] arr) {\n  int n = arr.length;\n  for (int i = 0; i < n - 1; i++) {\n    for (int j = 0; j < n - i - 1; j++) {\n      if (arr[j] > arr[j + 1]) {\n        int temp = arr[j];\n        arr[j] = arr[j + 1];\n        arr[j + 1] = temp;\n      }\n    }\n  }\n} ``` |

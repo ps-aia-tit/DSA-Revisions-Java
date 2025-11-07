@@ -1,86 +1,55 @@
 ## Data Structures Definitions
 ---
 
+|## Data Structures Definitions
+
 Data Structure
 
 Definition
 
 Array
 
-A fixed-size, indexed collection of elements of the same type. Allows fast access via indices but has static size and costly insertions/deletions.
+A collection of elements identified by index, stored in contiguous memory locations.
 
 Linked List
 
-A linear collection of nodes where each node points to the next. Supports dynamic memory allocation and efficient insertions/deletions.
-
-Doubly Linked List
-
-A variation of linked list where each node points to both its previous and next node. Enables bidirectional traversal.
+A linear collection of nodes where each node points to the next, allowing efficient insertions and deletions.
 
 Stack
 
-A LIFO (Last-In, First-Out) structure where elements are added and removed from the top. Used in recursion, parsing, and undo operations.
+A collection that follows Last In First Out (LIFO) principle, supporting push and pop operations.
 
 Queue
 
-A FIFO (First-In, First-Out) structure where elements are added at the rear and removed from the front. Used in scheduling and buffering.
+A collection that follows First In First Out (FIFO) principle, supporting enqueue and dequeue operations.
 
-Deque
+Hash Table
 
-A double-ended queue that allows insertion and deletion from both front and rear. Combines stack and queue capabilities.
-
-Hash Table / HashMap
-
-Stores key-value pairs with fast access using a hash function. Ideal for constant-time lookups, insertions, and deletions.
-
-Set
-
-A collection of unique elements with no particular order. Useful for membership testing and eliminating duplicates.
+A data structure that maps keys to values using a hash function for efficient lookups.
 
 Tree
 
-A hierarchical structure with nodes connected by edges. Each node has a parent and zero or more children.
+A hierarchical structure with nodes connected by edges, with one root node and child nodes.
 
 Binary Tree
 
-A tree where each node has at most two children (left and right). Forms the basis for many advanced trees.
+A tree where each node has at most two children, referred to as left and right child.
 
 Binary Search Tree (BST)
 
-A binary tree where left child < parent < right child. Enables efficient searching, insertion, and deletion.
-
-AVL Tree
-
-A self-balancing BST that maintains height balance after insertions/deletions to ensure O(log n) operations.
-
-Red-Black Tree
-
-A self-balancing BST with color-coded nodes to maintain balance. Guarantees O(log n) time for operations.
+A binary tree where left child nodes contain smaller values and right child nodes contain larger values.
 
 Heap
 
-A complete binary tree used to implement priority queues. Max-heap and min-heap variants maintain order based on root value.
-
-Trie (Prefix Tree)
-
-A tree used to store strings where each node represents a character. Efficient for prefix-based search and autocomplete.
+A specialized tree-based structure that satisfies the heap property (max-heap or min-heap).
 
 Graph
 
-A set of nodes (vertices) connected by edges. Can be directed/undirected, weighted/unweighted. Used in network modeling.
+A collection of nodes (vertices) connected by edges, which can be directed or undirected.
 
-Adjacency Matrix
+Trie
 
-A 2D array representation of a graph where cell (i,j) indicates edge presence. Space-intensive but fast edge lookup.
-
-Adjacency List
-
-A space-efficient graph representation where each vertex stores a list of adjacent vertices. Ideal for sparse graphs.
-
-Union-Find / Disjoint Set
-
-A structure to track a set of elements partitioned into disjoint subsets. Supports efficient union and find operations.
-
+A tree-like data structure used to store dynamic sets of strings, often for prefix searching.
 
 ---
 

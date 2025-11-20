@@ -1,7 +1,7 @@
 # 📘 LeetCode 100 Practice Questions
 
 A curated roadmap of 100 LeetCode problems organized by topic.  
-Practice daily: **2 Easy + 2 Medium + 1 Hard** for balanced growth.
+Practice Pattern: **2 Easy + 2 Medium + 1 Hard** for balanced growth.
 
 ---
 
